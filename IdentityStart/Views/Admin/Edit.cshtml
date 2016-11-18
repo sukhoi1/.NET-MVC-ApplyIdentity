@@ -1,0 +1,32 @@
+﻿@model ApplyIdentity.Models.CreateModel
+@* ApplyIdentity.Models.AppUser *@
+
+@{ ViewBag.Title = "Edit"; }
+
+<h2>Edit user</h2>
+
+@Html.ValidationSummary(false)
+@Html.Partial("Config")
+
+<div class="form-group">
+    <label>Id</label>
+    <p class="form-control-static">@Model.Id</p>
+    <label>Name</label>
+    <p class="form-control-static">@Model.Name</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.Name)
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input name="password" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+}
