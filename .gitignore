@@ -1,6 +1,6 @@
 packages/
-IdentityStart/obj/
-IdentityStart/bin/
-IdentityStart/.vs/
-.vs/IdentityStart/v14/.suo
-IdentityStart/IdentityStart.csproj.user
+ApplyIdentity/obj/
+ApplyIdentity/bin/
+ApplyIdentity/.vs/
+.vs/ApplyIdentity/v14/.suo
+ApplyIdentity/ApplyIdentity.csproj.user
