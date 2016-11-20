@@ -72,7 +72,7 @@ namespace ApplyIdentity.Controllers
             AppUser user = await UserManager.FindByIdAsync(id);
             if (user != null)
             {
-                return View(new CreateModel() { Id = user.Id, Email = user.Email, Name = user.UserName });
+                return View(user);
             }
             else
             {

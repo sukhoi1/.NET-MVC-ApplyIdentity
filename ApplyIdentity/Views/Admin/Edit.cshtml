@@ -1,24 +1,17 @@
-﻿@model ApplyIdentity.Models.CreateModel
-@* ApplyIdentity.Models.AppUser *@
+﻿@model ApplyIdentity.Models.AppUser
 
 @{ ViewBag.Title = "Edit"; }
-
-<h2>Edit user</h2>
-
 @Html.ValidationSummary(false)
-@Html.Partial("Config")
+
+<h2>Edit User</h2>
 
 <div class="form-group">
-    <label>Id</label>
-    <p class="form-control-static">@Model.Id</p>
     <label>Name</label>
-    <p class="form-control-static">@Model.Name</p>
+    <p class="form-control-static">@Model.Id</p>
 </div>
-
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(x => x.Id)
-    @Html.HiddenFor(x => x.Name)
     <div class="form-group">
         <label>Email</label>
         @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })

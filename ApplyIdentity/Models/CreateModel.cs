@@ -1,14 +1,18 @@
-﻿using FluentValidation.Attributes;
-using ApplyIdentity.Infrastructure;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ApplyIdentity.Models
 {
-    [Validator(typeof(FluentCreateModelValidator))]
-    public class CreateModel
-    {
+	public class CreateModel
+	{
         public string Id { get; set; }
-        public string Name { get; set; }
+
+        [Required]
+	    public string Name { get; set; }
+
+        [Required]
         public string Email { get; set; }
+
+        [Required]
         public string Password { get; set; }
     }
 }
