@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using ApplyIdentity.Infrastructure;
 using ApplyIdentity.Models;
 using Microsoft.AspNet.Identity;
