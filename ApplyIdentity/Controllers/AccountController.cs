@@ -16,8 +16,20 @@ namespace ApplyIdentity.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                return View("Error", new string[] { "Access Denied" });
+            }
+
             ViewBag.returnUrl = returnUrl;
             return View();
+        }
+
+        [Authorize]
+        public ActionResult Logout()
+        {
+            AuthManager.SignOut();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -42,6 +54,7 @@ namespace ApplyIdentity.Controllers
                 }
             }
 
+            ViewBag.returnUrl = returnUrl;
             return View(model);
         }
 

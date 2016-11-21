@@ -25,9 +25,16 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Admin-Index", "Index", "Admin")</li>
-                    <li>@Html.ActionLink("Account-Login", "Login", "Account")</li>
-                    <li>@Html.ActionLink("RoleAdmin-Index", "Index", "RoleAdmin")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("OtherAction", "OtherAction", "Home", null, new { @style = "color: lightgreen; " })</li>
+                    }
+                    <li>@Html.ActionLink("Manager Users", "Index", "Admin")</li>
+                    <li>@Html.ActionLink("Manage Roles", "Index", "RoleAdmin")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Sign out", "Logout", "Account")</li>
+                    }
                 </ul>
             </div>
         </div>
